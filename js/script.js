@@ -16,9 +16,7 @@ function searchCountries() {
 }
 
 function showCountriesList(resp) {
-    countriesList.innerHTML = '';
-    var countryData = [];
-    
+   
     resp.forEach(function(item){
         var data = {
             name: item.name,
@@ -27,20 +25,17 @@ function showCountriesList(resp) {
             population: item.population,
             timezone: item.timezones
         }
-       
-    console.log(countryData);
-    countryData.push (data) 
-    
-    for (var i = 0; i < countryData.length; i++) {
       
   
-        for (var key of ['name', 'capital', 'area', 'population', 'timezone']) {
-            var liEl = document.createElement('li');
-        liEl.innerText = countryData[i][key];
-        
-        countriesList.appendChild(liEl);
-        }
-    }
+    var templateCountryData = document.getElementById('template-country-data').innerHTML;
+    var tablePlace = document.getElementById('countries');
+
+    Mustache.parse(templateCountryData);
+	
+    var generatedData = Mustache.render(templateCountryData, data);
+    
+    tablePlace.insertAdjacentHTML('beforeend', generatedData);    
+    
 
     })
 }

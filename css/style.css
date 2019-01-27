@@ -1,0 +1,30 @@
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid black;
+}
+
+td:first-child, th:first-child {
+  background-color: red;
+}
+
+td:nth-child(2), th:nth-child(2) {
+  background-color: greenyellow;
+}
+
+.name {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */
